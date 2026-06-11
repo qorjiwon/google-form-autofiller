@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Google Form Auto-filler</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <h2>Form Auto-filler</h2>
+    
+    <div class="toggle-section">
+      <span>자동 채우기 기능</span>
+      <label class="switch">
+        <input type="checkbox" id="autofill-toggle" checked>
+        <span class="slider round"></span>
+      </label>
+    </div>
+
+    <div class="info-box">
+      <strong>💡 객관식 및 체크박스 안내</strong><br>
+      • 단일 선택: 폼의 선택지 텍스트와 <b>똑같이</b> 입력 (예: <i>옵션 1</i>)<br>
+      • 다중 선택: 여러 개 선택 시 <b>쉼표(,)</b>로 구분 (예: <i>사과, 포도</i>)
+    </div>
+
+    <div id="list-container">
+      <!-- Items will be injected here -->
+    </div>
+
+    <div class="add-section">
+      <h3>새로운 항목 추가</h3>
+      <input type="text" id="new-question" placeholder="질문 (예: 성함)">
+      <input type="text" id="new-answer" placeholder="답변 (예: 홍길동)">
+      <button id="add-btn">추가하기</button>
+    </div>
+
+  </div>
+
+  <div id="toast" class="toast">저장되었습니다!</div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

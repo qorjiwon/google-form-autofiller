@@ -1,0 +1,28 @@
+{
+  "manifest_version": 3,
+  "name": "Google Form Auto-filler",
+  "version": "1.0",
+  "description": "Automatically fill Google Forms with preset answers.",
+  "permissions": [
+    "storage",
+    "activeTab",
+    "scripting"
+  ],
+  "host_permissions": [
+    "*://docs.google.com/forms/*"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Auto-filler settings"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://docs.google.com/forms/*"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}
