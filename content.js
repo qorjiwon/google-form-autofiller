@@ -22,7 +22,10 @@ function attemptAutofill(retryCount = 0) {
       for (const entry of data) {
         if (!entry.question || !entry.answer) continue;
 
-        if (itemText.includes(entry.question)) {
+        const keywords = entry.question.split(',').map(k => k.trim()).filter(k => k);
+        const isMatch = keywords.some(keyword => itemText.includes(keyword));
+
+        if (isMatch) {
           // 1. Text/Email/Number Inputs and Textareas
           const textInput = item.querySelector('input:not([type="hidden"]):not([type="radio"]):not([type="checkbox"])');
           const textArea = item.querySelector('textarea');
