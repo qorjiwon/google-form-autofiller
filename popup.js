@@ -46,9 +46,16 @@ document.addEventListener("DOMContentLoaded", () => {
       const header = document.createElement("div");
       header.className = "item-header";
 
-      const questionSpan = document.createElement("span");
-      questionSpan.className = "item-question";
-      questionSpan.textContent = item.question;
+      const questionInput = document.createElement("input");
+      questionInput.type = "text";
+      questionInput.className = "item-question-input";
+      questionInput.value = item.question;
+      questionInput.placeholder = "질문 입력";
+      
+      questionInput.addEventListener("change", () => {
+        formData[index].question = questionInput.value;
+        saveData(false);
+      });
 
       const deleteBtn = document.createElement("button");
       deleteBtn.className = "delete-btn";
@@ -58,7 +65,7 @@ document.addEventListener("DOMContentLoaded", () => {
         saveData();
       };
 
-      header.appendChild(questionSpan);
+      header.appendChild(questionInput);
       header.appendChild(deleteBtn);
 
       const answerInput = document.createElement("input");

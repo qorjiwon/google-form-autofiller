@@ -37,10 +37,26 @@ h3 {
   justify-content: space-between;
   align-items: center;
 }
-.item-question {
+.item-question-input {
+  flex: 1;
+  padding: 6px 8px;
+  border: 1px solid transparent;
+  border-radius: 4px;
   font-weight: 600;
   font-size: 14px;
   color: #202124;
+  margin-right: 8px;
+  background-color: transparent;
+  transition: background-color 0.2s, border-color 0.2s;
+  width: 100%;
+}
+.item-question-input:hover {
+  background-color: #f1f3f4;
+}
+.item-question-input:focus {
+  background-color: white;
+  border-color: #1a73e8;
+  outline: none;
 }
 .delete-btn {
   background: #fce8e6;
